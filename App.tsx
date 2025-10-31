@@ -274,14 +274,14 @@ const App: React.FC = () => {
       case 'WELCOME':
         return (
            <div 
-                className="w-screen h-screen flex flex-col items-center justify-center text-center cursor-pointer bg-gray-900"
+                className="w-screen h-screen flex flex-col items-center justify-center text-center cursor-pointer bg-gray-900 p-4"
                 onClick={() => setAppState('FORM')}
             >
                 <div className="transform transition-transform hover:scale-105 duration-500">
-                    <h1 className="text-5xl font-extrabold text-[#a6a6a6] tracking-widest font-serif">文字泡麵</h1>
-                    <h2 className="text-2xl font-light text-gray-300 mt-4 tracking-[0.1em]">純手打の溫度</h2>
+                    <h1 className="text-4xl sm:text-5xl font-extrabold text-[#a6a6a6] tracking-widest font-serif">文字泡麵</h1>
+                    <h2 className="text-xl sm:text-2xl font-light text-gray-300 mt-4 tracking-[0.1em]">純手打の溫度</h2>
                 </div>
-                <p className="text-gray-400 mt-20 text-md">用你的故事，煮一碗好麵。</p>
+                <p className="text-gray-400 mt-12 sm:mt-20 text-md">用你的故事，煮一碗好麵。</p>
                 <p className="text-gray-500 mt-4 text-md animate-pulse">世界太快，但你還願意慢慢煮。</p>
                 <p className="text-gray-600 mt-8 text-sm">點擊任意處開始創作</p>
             </div>
@@ -311,7 +311,7 @@ const App: React.FC = () => {
       case 'FORM':
       default:
         return (
-          <div className="w-full max-w-2xl p-8 space-y-6 bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-2xl border border-gray-700">
+          <div className="w-full max-w-2xl p-4 sm:p-8 space-y-6 bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-2xl border border-gray-700">
              {isLoading.active && <Loader message={isLoading.message} />}
              <audio src={audioUrl} onLoadedMetadata={handleAudioMetadata} className="hidden" />
             <div className="text-center">
@@ -385,7 +385,7 @@ const App: React.FC = () => {
                             <span>天選之桶</span>
                         </button>
                         {isAiMenuOpen && isAiUnlocked && (
-                            <div className="absolute right-0 bottom-full mb-2 w-48 bg-gray-700 rounded-md shadow-lg z-20 border border-gray-600">
+                            <div className="absolute right-0 top-full mt-2 w-48 bg-gray-700 rounded-md shadow-lg z-20 border border-gray-600">
                                 <ul className="py-1">
                                     <li>
                                         <button onClick={() => { handleAiRequest(runAiLyricTiming); setIsAiMenuOpen(false); }} className="w-full text-left px-4 py-2 text-sm text-gray-200 hover:bg-gray-600 flex items-center gap-2 transition-colors">
